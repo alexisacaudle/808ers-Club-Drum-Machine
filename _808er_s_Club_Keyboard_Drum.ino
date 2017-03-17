@@ -8,14 +8,13 @@ Version 1.0  2015-01-01 Initial Version derived from TrinketKeyBoardExample  Mik
 #include <ProTrinketKeyboard.h>  // Ensure the library is installed
 
 // Switches are connected from ground to these defined pins
-const int PIN_BUTTON_CAPITAL_B = 9;
-const int PIN_BUTTON_CAPITAL_K = 10;
-const int PIN_BUTTON_CAPITAL_S = 11;
-const int PIN_BUTTON_CAPITAL_W = 12;
+const int PIN_BUTTON_CAPITAL_B = 3;
+const int PIN_BUTTON_CAPITAL_K = 4;
+const int PIN_BUTTON_CAPITAL_S = 5;
+const int PIN_BUTTON_CAPITAL_W = 6;
 
 
-void setup()
-{
+void setup(){
   // Declare button pins as inputs
   pinMode(PIN_BUTTON_CAPITAL_B, INPUT);
   pinMode(PIN_BUTTON_CAPITAL_K, INPUT);
@@ -33,45 +32,40 @@ void setup()
   TrinketKeyboard.begin();
 }
 
-void loop()
-{
+void loop(){
   TrinketKeyboard.poll();
   // the poll function must be called at least once every 10 ms
   // or cause a keystroke
   // if it is not, then the computer may think that the device
   // has stopped working, and give errors
 
-  if (digitalRead(PIN_BUTTON_CAPITAL_B) == LOW)
-  {
+  if (digitalRead(PIN_BUTTON_CAPITAL_B) == LOW){
     TrinketKeyboard.pressKey(0, KEYCODE_B);
-    delay(100);
+    delay(500);
     // this should type a capital A
     TrinketKeyboard.pressKey(0, 0);
     // this releases the key
   }
 
-    if (digitalRead(PIN_BUTTON_CAPITAL_K) == LOW)
-  {
+    if (digitalRead(PIN_BUTTON_CAPITAL_K) == LOW){
     TrinketKeyboard.pressKey(0, KEYCODE_K);
-    delay(100);
+    delay(500);
     // this should type a capital A
     TrinketKeyboard.pressKey(0, 0);
     // this releases the key
   }
 
-    if (digitalRead(PIN_BUTTON_CAPITAL_S) == LOW)
-  {
+    if (digitalRead(PIN_BUTTON_CAPITAL_S) == LOW){
     TrinketKeyboard.pressKey(0, KEYCODE_S);
-    delay(100);
+    delay(500);
     // this should type a capital A
     TrinketKeyboard.pressKey(0, 0);
     // this releases the key
   }
 
-    if (digitalRead(PIN_BUTTON_CAPITAL_W) == LOW)
-  {
+    if (digitalRead(PIN_BUTTON_CAPITAL_W) == LOW){
     TrinketKeyboard.pressKey(0, KEYCODE_W);
-    delay(100);
+    delay(500);
     // this should type a capital A
     TrinketKeyboard.pressKey(0, 0);
     // this releases the key
