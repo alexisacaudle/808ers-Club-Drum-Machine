@@ -14,7 +14,8 @@ const int PIN_BUTTON_CAPITAL_S = 5;
 const int PIN_BUTTON_CAPITAL_W = 6;
 
 
-void setup(){
+void setup()
+{
   // Declare button pins as inputs
   pinMode(PIN_BUTTON_CAPITAL_B, INPUT);
   pinMode(PIN_BUTTON_CAPITAL_K, INPUT);
@@ -32,14 +33,16 @@ void setup(){
   TrinketKeyboard.begin();
 }
 
-void loop(){
+void loop()
+{
   TrinketKeyboard.poll();
   // the poll function must be called at least once every 10 ms
   // or cause a keystroke
   // if it is not, then the computer may think that the device
   // has stopped working, and give errors
 
-  if (digitalRead(PIN_BUTTON_CAPITAL_B) == LOW){
+  if (digitalRead(PIN_BUTTON_CAPITAL_B) == LOW)
+  {
     TrinketKeyboard.pressKey(0, KEYCODE_B);
     delay(500);
     // this should type a capital A
@@ -47,7 +50,8 @@ void loop(){
     // this releases the key
   }
 
-    if (digitalRead(PIN_BUTTON_CAPITAL_K) == LOW){
+    if (digitalRead(PIN_BUTTON_CAPITAL_K) == LOW)
+  {
     TrinketKeyboard.pressKey(0, KEYCODE_K);
     delay(500);
     // this should type a capital A
@@ -55,7 +59,8 @@ void loop(){
     // this releases the key
   }
 
-    if (digitalRead(PIN_BUTTON_CAPITAL_S) == LOW){
+    if (digitalRead(PIN_BUTTON_CAPITAL_S) == LOW)
+  {
     TrinketKeyboard.pressKey(0, KEYCODE_S);
     delay(500);
     // this should type a capital A
@@ -63,7 +68,8 @@ void loop(){
     // this releases the key
   }
 
-    if (digitalRead(PIN_BUTTON_CAPITAL_W) == LOW){
+    if (digitalRead(PIN_BUTTON_CAPITAL_W) == LOW)
+  {
     TrinketKeyboard.pressKey(0, KEYCODE_W);
     delay(500);
     // this should type a capital A
